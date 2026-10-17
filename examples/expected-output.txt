@@ -1,0 +1,14 @@
+[
+  {
+    "cluster": 0,
+    "population_share": 0.5,
+    "customer_share": 0.0,
+    "representation_ratio": 0.0
+  },
+  {
+    "cluster": 1,
+    "population_share": 0.5,
+    "customer_share": 1.0,
+    "representation_ratio": 2.0
+  }
+]

@@ -1,18 +1,42 @@
 # Customer Segmentation Pipeline
 
-**Feras Elghandour** · Technical case study
-
 Identify differences between customer and reference-population segments while making missing-data filtering and representation bias explicit.
 
 ## Implementation
 
 A numeric-feature segmentation pipeline fitted on population data, with imputation, scaling, PCA, K-means, and customer representation ratios.
 
-```mermaid
-flowchart LR
-    A[Validated inputs] --> B[Portable implementation]
-    B --> C[Evaluation and contract checks]
-    C --> D[Inspectable results]
+![Implementation mechanism: Population numeric features → Fit median imputer and scaler → Retain PCA variance then fit K-means → Transform customers with fitted pipeline → Compare customer and population cluster shares](assets/mechanism.svg)
+
+## Try a small example
+
+A small offline fixture exercises the public implementation. It demonstrates the behavior shown below; it does not replace the historical dataset, benchmark or production validation.
+
+After the local setup below, run from the repository root:
+
+```sh
+python examples/quickstart.py
+```
+
+The [example source](examples/quickstart.py), [captured output](examples/expected-output.txt) and [execution record](examples/environment.json) keep this demonstration inspectable. Floating-point values may vary with library versions.
+
+Observed output from this run:
+
+```text
+[
+  {
+    "cluster": 0,
+    "population_share": 0.5,
+    "customer_share": 0.0,
+    "representation_ratio": 0.0
+  },
+  {
+    "cluster": 1,
+    "population_share": 0.5,
+    "customer_share": 1.0,
+    "representation_ratio": 2.0
+  }
+]
 ```
 
 ## Completed study
@@ -38,5 +62,3 @@ Prepare your own inputs as described in [DATA.md](DATA.md). Tests use generated 
 ## Practical relevance and limitations
 
 Cluster labels are arbitrary and descriptions are exploratory. Filtering high-missingness records changes the population being modeled. Reproduction requires independent authorized access to the original input files.
-
-This edition makes the core behavior reusable and inspectable. Historical metrics and synthetic contract tests provide different kinds of evidence; neither establishes client deployment or commercial impact.
