@@ -71,3 +71,7 @@ Prepare your own inputs as described in [DATA.md](DATA.md). Tests use generated 
 ## Practical relevance and limitations
 
 Cluster labels are arbitrary and descriptions are exploratory. Filtering high-missingness records changes the population being modeled. Reproduction requires independent authorized access to the original input files.
+
+## Reuse
+
+The original contributions listed in [LICENSING.md](LICENSING.md) are available under [MIT](LICENSE). This scoped grant preserves upstream notices and separate dataset, simulator, notebook and checkpoint terms.
