@@ -8,6 +8,15 @@ A numeric-feature segmentation pipeline fitted on population data, with imputati
 
 ![Implementation mechanism: Population numeric features → Fit median imputer and scaler → Retain PCA variance then fit K-means → Transform customers with fitted pipeline → Compare customer and population cluster shares](assets/mechanism.svg)
 
+
+
+## Fit and persist population segments
+
+A complete CSV training/export path now saves the population-fitted preprocessing/PCA/K-means pipeline, numeric feature order and customer representation table, with reload parity.
+
+[Commands, artifacts and benchmark scope](BENCHMARKS.md) · [Versioned profiles](reproduction.json)
+
+
 ## Try a small example
 
 A small offline fixture exercises the public implementation. It demonstrates the behavior shown below; it does not replace the historical dataset, benchmark or production validation.
