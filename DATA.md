@@ -1,3 +1,3 @@
-# Data and input preparation
+# Input contract
 
-The notebook names the required population, customer, and feature-summary CSV files. Obtain them from the original provider under the applicable terms. No data or row-level derived output is distributed.
+Provide population and customer CSVs with matching numeric feature columns. segment fits imputation, scaling, PCA, and K-means only on the population table, then projects customers into the same fitted space. The default retains 90% PCA variance; an explicit component count can be passed through the Python API. No original population/customer files, feature dictionary, profiles, or centroids are distributed.
